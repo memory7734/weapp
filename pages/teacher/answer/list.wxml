@@ -1,0 +1,7 @@
+<view wx:if='{{list}}' class="notice-list">
+  <view class='item' wx:for="{{list}}" wx:key="*this">
+    <view class='tag' wx:key="*this">姓名：{{item.name}} 学号：{{item.studentid}} 标题：{{item.title}}</view>
+    <button class='detail' data-id="{{item['answerid']}}" data-index="{{index}}" bindtap='detail' size='mini'>查看详情</button>
+  </view>
+</view>
+<view wx:else></view>

@@ -1,0 +1,33 @@
+<view class="page">
+  <view wx:if="{{!user}}" class="userinfo">
+    <view class="cover">
+      <view class="cover_img">
+        <image mode="aspectFill" src="{{src}}"></image>
+      </view>
+      <view bindtap='enterWXapp' class="cover_btn">
+        进入程序
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{user&&!isteacher&&!isstudent}}">
+    <view bindtap='isteacher' class="isteacher">
+      我是老师
+    </view>
+    <view bindtap='isstudent' class="isstudent">
+      我是学生
+    </view>
+  </view>
+  <view wx:if="{{isteacher}}">
+    <form bindsubmit="registerTeacher">
+      <input class='input' name="name" placeholder="请输入姓名" />
+      <button class='submit' formType="submit">提交</button>
+    </form>
+  </view>
+  <view wx:if="{{isstudent}}">
+    <form bindsubmit="registerStudent">
+      <input class='input' name="studentid" placeholder="请输入学号" />
+      <input class='input2' name="name" placeholder="请输入姓名" />
+      <button class='submit' formType="submit">提交</button>
+    </form>
+  </view>
+</view>

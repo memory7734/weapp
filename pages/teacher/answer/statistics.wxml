@@ -1,0 +1,10 @@
+<view>
+  <view>作业名：{{tasktitle}}</view>
+  <view>已经完成{{complete}}人</view>
+  <view wx:if='{{list}}' class="notice-list">
+    <view class='item' wx:for="{{list}}" wx:key="*this">
+      <view class='tag' wx:key="*this">姓名：{{item.name}} 学号：{{item.studentid}} 标题：{{item.title}} 评分：{{item.score}}</view>
+      <button class='detail' data-id="{{item['answerid']}}" data-index="{{index}}" bindtap='detail' size='mini'>查看详情</button>
+    </view>
+  </view>
+</view>

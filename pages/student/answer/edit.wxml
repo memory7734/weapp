@@ -1,0 +1,19 @@
+<view>
+  <form bindsubmit="formSubmit">
+    <text class="issues-label">新建回答</text>
+    <view class="issues-panel">
+      <view class="issues-input {{(showError&&!title)?'error':''}}">
+        <input value='{{title}}' placeholder="请输入标题" name="title" />
+      </view>
+      <textarea value='{{content}}' class="issues-textarea {{(showError&&!content)?'error':''}}" cursor-spacing="50" placeholder="请输入作业内容" name="content"></textarea>
+    </view>
+    <button bindtap='upImg'>选择图片</button>
+    <view wx:if='{{urlArr!=null}}'>
+      <view wx:for="{{urlArr}}" wx:for-item="item" wx:key="*this">
+        <image src="{{item}}"></image>
+      </view>
+    </view>
+    <button formType='submit'>提交</button>
+  </form>
+
+</view>

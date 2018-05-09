@@ -1,0 +1,16 @@
+<view>
+  <view class="issues-panel">
+    <view>
+      {{title}}
+    </view>
+    <view>{{content}}</view>
+  </view>
+  <view class="picker">
+    班级：{{array[index].name}}
+  </view>
+  <view wx:if='{{urlArr!=null}}'>
+    <view wx:for="{{urlArr}}" wx:for-item="item" wx:key="*this">
+      <image src="{{item}}"></image>
+    </view>
+  </view>
+</view>

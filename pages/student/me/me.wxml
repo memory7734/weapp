@@ -1,0 +1,28 @@
+<import src="../../../template/template.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+<view class="page">
+  <view class='headName'>
+    <image class='head' src='{{userInfo.avatarUrl}}'></image>
+    <view class='name'>{{userInfo.nickName}}</view>
+  </view>
+  <view class='grayLine'></view>
+  <view class='classlist' bindtap='classlist'>
+    <image class='icon' src='../../../images/1-01.png'></image>
+    <view class='text'>班级列表</view>
+  </view>
+  <view class='grayLine1'></view>
+
+  <view class='join_class' bindtap='join_class'>
+    <image class='icon' src='../../../images/1-02.png'></image>
+    <view class='text'>加入班级</view>
+  </view>
+
+  <view class='grayLine2'></view>
+
+  <view class='join_class' bindtap='logout'>
+    <image class='icon' src='../../../images/1-03.png'></image>
+    <view class='text'>退出登陆</view>
+  </view>
+
+
+</view>

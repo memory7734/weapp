@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/teacher/index/index",
+    "pages/teacher/class/create_class",
+    "pages/teacher/class/class_list",
+    "pages/teacher/class/join_class",
+    "pages/teacher/notice/create_notice",
+    "pages/teacher/notice/notice_list",
+    "pages/teacher/notice/notice_detail",
+    "pages/teacher/notice/manage_notice",
+    "pages/teacher/task/create",
+    "pages/teacher/task/update",
+    "pages/teacher/task/detail",
+    "pages/teacher/task/list",
+    "pages/teacher/answer/statistics",
+    "pages/teacher/answer/list",
+    "pages/student/index/index",
+    "pages/student/class/class_list",
+    "pages/student/class/join_class",
+    "pages/student/notice/notice_list",
+    "pages/student/notice/notice_detail",
+    "pages/student/task/detail",
+    "pages/student/task/list",
+    "pages/student/answer/edit",
+    "pages/student/answer/review",
+    "pages/teacher/answer/detail",
+    "pages/logs/logs",
+    "pages/teacher/signin/create",
+    "pages/teacher/signin/list",
+    "pages/student/me/me"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "辅助课堂",
+    "navigationBarTextStyle": "black"
+  }
+}

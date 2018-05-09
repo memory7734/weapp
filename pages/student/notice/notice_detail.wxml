@@ -1,0 +1,3 @@
+<view wx:if='{{content}}'>
+  <view class='page'>{{content}}</view>
+</view>

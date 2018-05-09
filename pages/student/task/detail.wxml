@@ -1,0 +1,8 @@
+<view class='page'>
+  <view class='content'>{{content}}</view>
+  <view class='image' wx:if='{{urlArr!=null}}'>
+    <view wx:for="{{urlArr}}" wx:for-item="item" wx:key="*this">
+      <image mode="aspectFit" src="{{item}}"></image>
+    </view>
+  </view>
+</view>

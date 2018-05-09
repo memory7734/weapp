@@ -1,0 +1,9 @@
+<view>
+  <view wx:if='{{reviewed}}' class="issues-panel">
+    <view>
+      得分：{{score}}
+    </view>
+    <view>评语：{{comment}}</view>
+  </view>
+  <view wx:else>老师暂未查看回答</view>
+</view>
