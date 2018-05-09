@@ -1,1 +1,27 @@
-/* pages/teacher/class/join_class.wxss */
+.input {
+  font-size: 30rpx;
+  background-color: #eef6f6;
+  width: 400rpx;
+  height: 80rpx;
+  margin: 200rpx auto 0 auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: #adc2c1;
+  margin-bottom: 80rpx;
+}
+
+.submit {
+  font-size: 30rpx;
+  background-color: #1bd0bd;
+  width: 250rpx;
+  height: 80rpx;
+  border-radius: 100rpx;
+  color: #fff;
+  margin: 30rpx auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}

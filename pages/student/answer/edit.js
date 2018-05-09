@@ -97,6 +97,7 @@ Page({
           results.set("title", e.detail.value.title);
           results.set("content", e.detail.value.content);
           results.set("imgArr", that.data.urlArr);
+          results.set("reviewed", false);
           results.save();
           wx.showToast({
             title: '修改成功',

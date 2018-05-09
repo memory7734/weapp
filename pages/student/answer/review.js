@@ -16,11 +16,13 @@ Page({
     answer.equalTo('studentid', currentUser.id)
     answer.find({
       success: function (result) {
-        that.setData({
-          score: result[0].get("score"),
-          comment: result[0].get("comment"),
-          reviewed: result[0].get("reviewed"),
-        })
+        if (result[0].get("reviewed")) {
+          that.setData({
+            score: result[0].get("score"),
+            comment: result[0].get("comment"),
+            reviewed: result[0].get("reviewed"),
+          })
+        }
       },
       error: function (object, error) {
         // 查询失败
