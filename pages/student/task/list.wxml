@@ -11,4 +11,4 @@
     <button class='detail' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='review' size='mini'>查看评分</button>
   </view>
 </view>
-<view wx:else></view>
+<view class="list" wx:else>空空如也</view>

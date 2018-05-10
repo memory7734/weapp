@@ -3,7 +3,7 @@ var app = getApp();
 var that
 Page({
   data: {
-    title: '',
+    title:'',
     content: '',
     urlArr: [],
     array: [],
@@ -61,6 +61,9 @@ Page({
             }
             that.setData({
               array: classlist
+            })
+            wx.setNavigationBarTitle({
+              title: that.data.array[that.data.index].name+"：" + that.data.title,
             })
           },
           error: function (error) {

@@ -1,8 +1,11 @@
 <view wx:if='{{list}}' class="notice-list">
   <view class='item' wx:for="{{list}}" wx:key="*this">
-    <view class='tag' wx:key="*this">{{item.name}}{{item.title}}</view>
+    <view class='middle'>
+      <view class='title' wx:key="*this">{{item.title}}</view>
+      <view class='name' wx:key="*this">{{item.name}}</view>
+    </view>
     <button class='detail' data-id="{{item['id']}}" data-index="{{index}}" bindtap='detail' size='mini'>查看详情</button>
-    <button class='delete' data-id="{{item['id']}}" data-index="{{index}}" bindtap='deleteNotice' size='mini'>删除</button>
+    <button class='detail' data-id="{{item['id']}}" data-index="{{index}}" bindtap='deleteNotice' size='mini'>删除</button>
   </view>
 </view>
-<view wx:else></view>
+<view  class="notice-list" wx:else>空空如也</view>

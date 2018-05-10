@@ -1,11 +1,21 @@
+<import src="../../../template/template.wxml" />
 <view wx:if='{{list}}' class="notice-list">
+  <button class='submit' bindtap="create_task"> 创建作业 </button>
   <view class='item' wx:for="{{list}}" wx:key="*this">
-    <view class='tag' wx:key="*this">{{item.name}}{{item.title}}</view>
-    <button class='detail' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='detail' size='mini'>查看详情</button>
-    <button class='update' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='update' size='mini'>修改内容</button>
-    <button class='deleteTask' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='deleteTask' size='mini'>删除</button>
-    <button class='situation' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='situation' size='mini'>查看答题情况</button>
-    <button class='statistics' data-id="{{item['taskid']}}" data-title="{{item['title']}}" data-index="{{index}}" bindtap='statistics' size='mini'>答题统计</button>
+    <view class='top'>
+      <view class='middle'>
+        <view class='title' wx:key="*this">{{item.title}}</view>
+        <view class='name' wx:key="*this">{{item.name}}</view>
+      </view>
+      <button class='situation' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='detail' size='mini'>查看详情</button>
+      <button class='situation' data-id="{{item['taskid']}}"  data-title="{{item['title']}}" data-index="{{index}}" bindtap='situation' size='mini'>答题统计</button>
+    </view>
+    <view class='bottom'>
+    <view class='left'></view>
+      <button class='detail' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='update' size='mini'>修改内容</button>
+      <button class='detail' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='deleteTask' size='mini'>删除</button>
+    </view>
   </view>
 </view>
 <view wx:else></view>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />

@@ -1,1 +1,55 @@
-/* pages/teacher/notice/manage_notice.wxss */
+.notice-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1rpx solid #efefef;
+  padding: 10rpx 0rpx 10rpx 0rpx;
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  height: 100%;
+  background: #fff;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 130rpx;
+  border-bottom: 1rpx solid #efefef;
+  padding: 10rpx 0rpx 10rpx 0rpx;
+  position: relative;
+}
+
+.middle {
+  margin-left: 80rpx;
+  float: left;
+  width: 40%;
+}
+
+.title {
+  font-size: 30rpx;
+}
+
+.name {
+  margin-top: 8rpx;
+  font-size: 25rpx;
+  color: #7a7a7a;
+}
+.detail{
+  font-size: 30rpx;
+  background-color: #1bd0bd;
+  width: 180rpx;
+  height: 70rpx;
+  border-radius: 100rpx;
+  color: #fff;
+  margin: 50rpx auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}

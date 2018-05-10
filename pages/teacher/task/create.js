@@ -132,7 +132,7 @@ Page({
       }
     });
     wx.redirectTo({
-      url: 'list.js',
+      url: 'list',
     })
   }
 });

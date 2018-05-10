@@ -1,33 +1,25 @@
-//初始化数据
 function tabbar1() {
   return [
     {
       "current": 0,
-      "pagePath": "/pages/student/index/index",
-      "iconPath": "/images/3-01.png",
-      "selectedIconPath": "/images/5-01.png",
-      "text": "主页"
-    },
-    {
-      "current": 0,
       "pagePath": "/pages/student/task/list",
-      "iconPath": "/images/3-01.png",
-      "selectedIconPath": "/images/5-01.png",
+      "iconPath": "/images/1-2.png",
+      "selectedIconPath": "/images/1-1.png",
       "text": "作业"
 
     },
     {
       "current": 0,
       "pagePath": "/pages/student/notice/notice_list",
-      "iconPath": "/images/3-01.png",
-      "selectedIconPath": "/images/5-01.png",
+      "iconPath": "/images/2-2.png",
+      "selectedIconPath": "/images/2-1.png",
       "text": "公告"
     },
     {
       "current": 0,
       "pagePath": "/pages/student/me/me",
-      "iconPath": "/images/3-01.png",
-      "selectedIconPath": "/images/5-01.png",
+      "iconPath": "/images/3-2.png",
+      "selectedIconPath": "/images/3-1.png",
       "text": "我的"
     }
   ]
@@ -37,31 +29,24 @@ function tabbar2() {
   return [
     {
       "current": 0,
-      "pagePath": "/pages/student/index/index",
-      "iconPath": "/images/3-01.png",
-      "selectedIconPath": "/images/5-01.png",
-      "text": "主页"
-    },
-    {
-      "current": 0,
-      "pagePath": "/pages/student/index/index",
-      "iconPath": "/images/3-01.png",
-      "selectedIconPath": "/images/5-01.png",
+      "pagePath": "/pages/teacher/task/list",
+      "iconPath": "/images/1-2.png",
+      "selectedIconPath": "/images/1-1.png",
       "text": "作业"
 
     },
     {
       "current": 0,
-      "pagePath": "/pages/student/index/index",
-      "iconPath": "/images/3-01.png",
-      "selectedIconPath": "/images/5-01.png",
+      "pagePath": "/pages/teacher/notice/index",
+      "iconPath": "/images/2-2.png",
+      "selectedIconPath": "/images/2-1.png",
       "text": "公告"
     },
     {
       "current": 0,
-      "pagePath": "/pages/buy/buy",
-      "iconPath": "/images/3-01.png",
-      "selectedIconPath": "/images/5-01.png",
+      "pagePath": "/pages/teacher/me/me",
+      "iconPath": "/images/3-2.png",
+      "selectedIconPath": "/images/3-1.png",
       "text": "我的"
     }
   ]

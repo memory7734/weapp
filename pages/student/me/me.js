@@ -4,15 +4,12 @@ var Bmob = require('../../../utils/bmob.js');
 var app = getApp();
 var that;
 Page({
-
   data: {
     userInfo: {},
     currentUserId: null
   },
-
-
   onLoad: function () {
-    template.tabbarstudent("tabBar", 3, this)
+    template.tabbarstudent("tabBar", 2, this)
     that = this;
     var currentUser = Bmob.User.current();
     var currentUserId = currentUser.id;
@@ -105,5 +102,4 @@ Page({
       }
     }
   }
-
 })

@@ -8,4 +8,4 @@
     </view>
   </view>
 </view>
-<view wx:else>暂未加入班级，请加入或创建班级</view>
+<view class="list" wx:else>暂未加入班级，请加入或创建班级</view>

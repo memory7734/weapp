@@ -1,0 +1,18 @@
+<import src="../../../template/template.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+<view class="page">
+  <view class='notice' bindtap='create'>
+    <image class='icon' src='../../../images/2-1.png'></image>
+    <view class='text'>创建公告</view>
+  </view>
+  <view class='grayLine'></view>
+  <view class='notice' bindtap='manage'>
+    <image class='icon' src='../../../images/2-1.png'></image>
+    <view class='text'>管理公告</view>
+  </view>
+  <view class='grayLine'></view>
+  <view class='notice' bindtap='list'>
+    <image class='icon' src='../../../images/2-1.png'></image>
+    <view class='text'>公告列表</view>
+  </view>
+</view>

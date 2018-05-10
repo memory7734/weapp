@@ -1,16 +1,32 @@
+// pages/student/signin/signin.js
+var template = require('../../../template/template.js');
 var Bmob = require('../../../utils/bmob.js');
-const app = getApp()
-// var template = require('../../../template/template.js');
+var app = getApp();
 var that;
 Page({
   data: {
+    userInfo: {},
+    currentUserId: null
   },
   onLoad: function () {
-    // template.tabbarstudent("tabBar", 0, this)
+    template.tabbarteacher("tabBar", 2, this)
     that = this;
     var currentUser = Bmob.User.current();
-    console.log(currentUser)
+    var currentUserId = currentUser.id;
+    app.getUserInfo(function (userInfo) {
+      console.log(userInfo)
+      //更新数据
+      that.setData({
+        userInfo: userInfo,
+        currentUserId: currentUserId
+      })
+    })
   },
+
+  onShow: function () {
+
+  },
+
   logout: function (e) {
     var currentUser = Bmob.User.current();
     var User = Bmob.Object.extend("_User");
@@ -59,7 +75,12 @@ Page({
       }
     })
   },
-  class_list: function (e) {
+  create_class: function (e) {
+    wx.navigateTo({
+      url: '../class/create_class',
+    })
+  },
+  classlist: function (e) {
     wx.navigateTo({
       url: '../class/class_list',
     })
@@ -69,14 +90,20 @@ Page({
       url: '../class/join_class',
     })
   },
-  notice_list: function (e) {
-    wx.navigateTo({
-      url: '../notice/notice_list',
-    })
-  },
-  task_list: function (e) {
-    wx.navigateTo({
-      url: '../task/list',
-    })
-  },
+
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      console.log(res.target)
+    }
+    return {
+      title: '辅助课堂',
+      path: '/pages/index/index',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  }
 })

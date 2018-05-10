@@ -8,7 +8,7 @@ Page({
     list: []
   },
   onLoad: function (options) {
-    template.tabbarstudent("tabBar", 1, this)
+    template.tabbarstudent("tabBar", 0, this)
     that = this;
     var currentUser = Bmob.User.current();
     var Student = Bmob.Object.extend("student");

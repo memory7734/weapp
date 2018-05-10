@@ -11,12 +11,17 @@
     <view class='text'>班级列表</view>
   </view>
   <view class='grayLinethin'></view>
-  <view class='join_class' bindtap='join_class'>
+  <view class='classlist' bindtap='create_class'>
+    <image class='icon' src='../../../images/4.png'></image>
+    <view class='text'>创建班级</view>
+  </view>
+  <view class='grayLinethin'></view>
+  <view class='classlist' bindtap='join_class'>
     <image class='icon' src='../../../images/4.png'></image>
     <view class='text'>加入班级</view>
   </view>
   <view class='grayLine'></view>
-  <view class='join_class' bindtap='logout'>
+  <view class='classlist' bindtap='logout'>
     <image class='icon' src='../../../images/5.png'></image>
     <view class='text'>退出登陆</view>
   </view>

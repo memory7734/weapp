@@ -40,12 +40,6 @@
   font-size: 25rpx;
   color: #7a7a7a;
 }
-
-.right {
-  align-items: center;
-  float: right;
-  width: 30%;
-}
 .detail{
   font-size: 30rpx;
   background-color: #1bd0bd;

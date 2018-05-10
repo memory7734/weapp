@@ -1,4 +1,5 @@
 var Bmob = require('../../../utils/bmob.js');
+var template = require('../../../template/template.js');
 const app = getApp()
 var that;
 Page({
@@ -6,6 +7,7 @@ Page({
   },
   onLoad: function () {
     that = this;
+    template.tabbarteacher("tabBar", 0, this)
 
 
     // var User = Bmob.Object.extend("_User");

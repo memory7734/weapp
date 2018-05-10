@@ -2,11 +2,11 @@
   <form bindsubmit="formSubmit">
     <view class="issues-panel">
       <input class='input' value='{{title}}' placeholder="请输入标题" name="title" />
-      <textarea class='textarea' value='{{content}}' maxlength="-1" placeholder="请输入作业内容" name="content"></textarea>
+      <textarea class='textarea' value='{{content}}' maxlength="-1" placeholder="请输入作业内容" name="content"/>
     </view>
     <view wx:if='{{urlArr!=null}}'>
       <view class='image' wx:for="{{urlArr}}" wx:for-item="item" wx:key="*this">
-        <image  mode="aspectFit" src="{{item}}"></image>
+        <image mode="aspectFit" src="{{item}}"></image>
       </view>
     </view>
     <button class='submit' bindtap='upImg'>上传图片</button>

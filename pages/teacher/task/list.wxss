@@ -1,1 +1,101 @@
-/* pages/teacher/task/list.wxss */
+.submit {
+  font-size: 30rpx;
+  background-color: #1bd0bd;
+  width: 250rpx;
+  height: 80rpx;
+  border-radius: 100rpx;
+  color: #fff;
+  margin: 30rpx auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1rpx solid #efefef;
+  padding: 10rpx 0rpx 10rpx 0rpx;
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  height: 80%;
+  background: #fff;
+}
+
+.top {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 100rpx;
+  border-top: 1rpx solid #efefef;
+  padding: 10rpx 0;
+  position: relative;
+}
+
+.middle {
+  margin-left: 70rpx;
+  margin-top: 70rpx;
+  float: left;
+  width: 50%;
+}
+
+.title {
+  font-size: 30rpx;
+}
+
+.name {
+  margin-top: 13rpx;
+  font-size: 25rpx;
+  color: #7a7a7a;
+}
+
+.situation {
+  font-size: 30rpx;
+  background-color: #1bd0bd;
+  width: 180rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  color: #fff;
+  margin: 20rpx 10rpx 0 10rpx;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  margin-left: 80rpx;
+  float: left;
+  width: 360rpx;
+}
+
+.detail {
+  font-size: 30rpx;
+  background-color: #1bd0bd;
+  width: 180rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  color: #fff;
+  margin: 0 10rpx 20rpx 10rpx;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  float: right;
+  align-items: center;
+}
+
+.bottom {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+  border-bottom: 1rpx solid #efefef;
+  position: relative;
+}

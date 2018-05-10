@@ -22,7 +22,6 @@ page {
   align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .image {
@@ -88,7 +87,6 @@ page {
   justify-content:center;
   display:flex;
   align-items:center;
-  color: #adc2c1;
   margin-bottom: 80rpx;
 }
 .input2{
@@ -101,7 +99,6 @@ page {
   justify-content:center;
   display:flex;
   align-items:center;
-  color: #adc2c1;
   margin-bottom: 80rpx;
 }
 .submit {

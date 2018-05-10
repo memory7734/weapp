@@ -1,17 +1,14 @@
-<view class="create-class">
+<view class='content'>
   <form bindsubmit="formSubmit">
     <view class="section">
-      <input name="title" placeholder="请输入公告标题" />
-      <textarea name='content' placeholder="请输入公告内容"></textarea>
+      <input class='input' name="title" placeholder="请输入公告标题" />
+      <textarea class='textarea' maxlength="-1" name='content' placeholder="请输入公告内容"></textarea>
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key='name'>
         <view class="picker">
           公告对应班级为：{{array[index].name}}
         </view>
       </picker>
     </view>
-
-    <view class='btn-area'>
-      <button formType='submit'>提交</button>
-    </view>
+    <button class='submit' formType='submit'>提交</button>
   </form>
 </view>

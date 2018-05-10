@@ -1,14 +1,13 @@
 <view wx:if='{{!classid}}' class="create-class">
   <form bindsubmit="formSubmit">
     <view class="section">
-      <view class="section_title">班级名称</view>
-      <input name="class_name" placeholder="请输入班级名称" />
+      <input class='input' name="class_name" placeholder="请输入班级名称" />
     </view>
     <view class='btn-area'>
-      <button formType='submit'>提交</button>
+      <button class='submit' formType='submit'>提交</button>
     </view>
   </form>
 </view>
-<view wx:else>
+<view class='tip' wx:else>
   <text>班级id为{{classid}},已复制到剪贴板，可直接进入群聊分享</text>
 </view>

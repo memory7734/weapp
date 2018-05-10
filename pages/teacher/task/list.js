@@ -1,5 +1,6 @@
 // pages/teacher/class/class_list.js
-var Bmob = require('../../../utils/bmob.js');
+var Bmob = require('../../../utils/bmob.js'); 
+var template = require('../../../template/template.js');
 const app = getApp()
 var that
 Page({
@@ -7,6 +8,7 @@ Page({
     list: []
   },
   onLoad: function (options) {
+    template.tabbarteacher("tabBar", 0, this)
     that = this;
     var currentUser = Bmob.User.current();
     var Task = Bmob.Object.extend("task");
@@ -98,12 +100,12 @@ Page({
   },
   situation: function (options) {
     wx.navigateTo({
-      url: '../answer/list?id=' + options.currentTarget.dataset.id,
+      url: '../answer/list?id=' + options.currentTarget.dataset.id + '&title=' + options.currentTarget.dataset.title,
     })
   },
-  statistics: function (options) {
+  create_task: function (e) {
     wx.navigateTo({
-      url: '../answer/statistics?id=' + options.currentTarget.dataset.id + '&title=' + options.currentTarget.dataset.title,
+      url: 'create',
     })
   },
 })

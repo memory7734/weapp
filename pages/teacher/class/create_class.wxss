@@ -1,1 +1,47 @@
-/* pages/teacher/class/create_class.wxss */
+.input {
+  font-size: 30rpx;
+  background-color: #eef6f6;
+  width: 400rpx;
+  height: 80rpx;
+  margin: 200rpx auto 0 auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  /* color: #adc2c1; */
+  margin-bottom: 80rpx;
+}
+
+.submit {
+  font-size: 30rpx;
+  background-color: #1bd0bd;
+  width: 250rpx;
+  height: 80rpx;
+  border-radius: 100rpx;
+  color: #fff;
+  margin: 30rpx auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.tip {
+  display: flex;
+  flex-direction: column;
+  padding: 200rpx 0rpx 10rpx 0rpx;
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  border-bottom: 1rpx solid #efefef;
+  font-size: 30rpx;
+  background: #fff;
+  height: 80rpx;
+  margin: 10rpx 30rpx 0 30rpx;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+}

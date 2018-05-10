@@ -1,0 +1,28 @@
+.page{
+    font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+    height: 100%;
+    background: #ffffff;
+}
+
+.grayLine{
+  height: 2rpx;
+  width: 100%;
+  background-color: #e1e3e3;
+}
+.notice{
+  margin: 28rpx 0rpx 28rpx 32rpx;
+  display:flex;
+  align-items:center;
+  text-align: center;
+}
+
+.icon{
+  width: 63rpx;
+  height: 63rpx;
+}
+
+.text{
+  color: #717171;
+  font-size: 30rpx;
+  margin-left: 16rpx;
+}

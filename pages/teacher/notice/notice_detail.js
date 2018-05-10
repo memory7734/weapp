@@ -3,7 +3,6 @@ const app = getApp()
 var that
 Page({
   data: {
-    title: null,
     content: null
   },
   onLoad: function (options) {
@@ -13,8 +12,10 @@ Page({
     notice.get(options.id, {
       success: function (result) {
         that.setData({
-          title: result.get("title"),
           content: result.get("content")
+        })
+        wx.setNavigationBarTitle({
+          title: result.get("title"),
         })
       },
       error: function (object, error) {

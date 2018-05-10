@@ -1,10 +1,12 @@
+<import src="../../../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
     <text>老师界面</text>
-    <button bindtap="create_class"> 创建班级 </button>
+     <!-- <button bindtap="create_class"> 创建班级 </button>  -->
   </view>
-  <view class="userinfo">
+  <!-- <view class="userinfo">
     <button bindtap="class_list"> 班级列表 </button>
   </view>
   <view class="userinfo">
@@ -12,7 +14,7 @@
   </view>
   <view class="userinfo">
     <button bindtap="logout"> 退出登陆 </button>
-  </view>
+  </view> -->
   <view class="userinfo">
     <button bindtap="create_notice"> 创建公告 </button>
   </view>

@@ -1,15 +1,15 @@
-<view wx:if='{{list}}' class="class-list">
+<view wx:if='{{list}}' class="list">
   <view class='item' wx:for="{{list}}" wx:key="*this">
-    <view class='section' bindtap='catch_data' data-index="{{index}}" data-id="{{item['id']}}" data-name="{{item['name']}}">
-      <view class='input' wx:key="*this">{{item['name']}}</view>
+    <view class='middle' bindtap='catch_data' data-index="{{index}}" data-id="{{item['id']}}" data-name="{{item['name']}}">
+      <view class='name' wx:key="*this">{{item['name']}}</view>
       <button class='change_name' size='mini' tpye='primary' bindtap='change_name'>修改名称</button>
     </view>
-    <view class='section'>
+    <view>
       <button class='dismiss' data-id="{{item['id']}}" data-index="{{index}}" bindtap='dismiss' size='mini' tpye='warn'>退出</button>
     </view>
   </view>
 </view>
-<view wx:else>暂未加入班级，请加入或创建班级</view>
+<view class='list' wx:else>暂未加入班级，请加入或创建班级</view>
 
 <!--弹窗-->
 <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>

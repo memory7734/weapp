@@ -1,61 +1,63 @@
-page{
-     height: 100%;
- }
-.page{
-    font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
-    height: 100%;
-    background: #ffffff;
+page {
+  height: 100%;
 }
-.headName{
+
+.page {
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  height: 100%;
+  background: #fff;
+}
+
+.headName {
   margin: 48rpx 0rpx 48rpx 32rpx;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   text-align: center;
 }
-.head{
+
+.head {
   float: left;
   width: 130rpx;
   height: 130rpx;
 }
 
-.name{
+.name {
   font-size: 35rpx;
   margin-left: 24rpx;
   float: left;
 }
 
-.grayLine{
+.grayLine {
   height: 10rpx;
   width: 100%;
   background-color: #e1e3e3;
 }
-.grayLine1{
-  height: 1rpx;
+
+.grayLinethin {
+  height: 2rpx;
   width: 100%;
   background-color: #e1e3e3;
 }
 
-.classlist,.join_class{
+.classlist, .join_class {
   margin: 28rpx 0rpx 28rpx 32rpx;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   text-align: center;
 }
 
-.icon{
+.icon {
   width: 63rpx;
   height: 63rpx;
 }
 
-.text{
+.text {
   color: #717171;
   font-size: 30rpx;
   margin-left: 16rpx;
-}
-
-
-.grayLine2{
-  height: 10rpx;
-  width: 100%;
-  background-color: #e1e3e3;
 }

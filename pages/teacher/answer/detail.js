@@ -3,12 +3,11 @@ var app = getApp();
 var that
 Page({
   data: {
-    title: '',
     content: '',
     urlArr: [],
     answerid: '',
     reviewed: false,
-    score: 0,
+    score: '',
     comment: ''
   },
   onLoad: function (options) {
@@ -18,10 +17,12 @@ Page({
     answer.get(options.id, {
       success: function (result) {
         that.setData({
-          title: result.get("title"),
           content: result.get("content"),
           urlArr: result.get("imgArr"),
           answerid: options.id,
+        })
+        wx.setNavigationBarTitle({
+          title: result.get("title"),
         })
         if (result.get("reviewed")){
           that.setData({

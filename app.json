@@ -13,7 +13,6 @@
     "pages/teacher/task/update",
     "pages/teacher/task/detail",
     "pages/teacher/task/list",
-    "pages/teacher/answer/statistics",
     "pages/teacher/answer/list",
     "pages/student/index/index",
     "pages/student/class/class_list",
@@ -28,7 +27,9 @@
     "pages/logs/logs",
     "pages/teacher/signin/create",
     "pages/teacher/signin/list",
-    "pages/student/me/me"
+    "pages/student/me/me",
+    "pages/teacher/me/me",
+    "pages/teacher/notice/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

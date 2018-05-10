@@ -9,4 +9,4 @@
     <button class='detail' data-id="{{item['id']}}" data-index="{{index}}" bindtap='detail' size='mini'>查看详情</button>
   </view>
 </view>
-<view wx:else></view>
+<view  class="notice-list" wx:else>空空如也</view>

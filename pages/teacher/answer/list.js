@@ -4,10 +4,14 @@ const app = getApp()
 var that
 Page({
   data: {
+    complete: 0,
     list: []
   },
   onLoad: function (options) {
     that = this;
+    wx.setNavigationBarTitle({
+      title: options.title + '答题情况',
+    })
     var currentUser = Bmob.User.current();
     var Answer = Bmob.Object.extend("answer");
     var answer = new Bmob.Query(Answer);
@@ -16,10 +20,14 @@ Page({
     var list = []
     answer.find({
       success: function (results) {
+        that.setData({
+          complete: results.length
+        })
         for (var i = 0; i < results.length; i++) {
           list[i] = {}
           list[i]['answerid'] = results[i].id;
           list[i]['title'] = results[i].get('title');
+          list[i]['score'] = results[i].get('score');
           list[i]['userid'] = results[i].get('studentid');
         }
         var User = Bmob.Object.extend("_User");

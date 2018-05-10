@@ -40,7 +40,7 @@ Page({
             app.globalData.isstudent = false
             app.globalData.name = name
             wx.redirectTo({
-              url: '../teacher/index/index',
+              url: '../teacher/task/list',
             })
           } else if (isstudent) {
             app.globalData.isteacher = false
@@ -48,7 +48,8 @@ Page({
             app.globalData.name = name
             app.globalData.studentid = studentid
             wx.redirectTo({
-              url: '../student/index/index',
+              // url: '../student/index/index',
+              url: '../student/task/list',
             })
           } else {
             result.set("isstudent", false)
@@ -108,7 +109,8 @@ Page({
       }
     });
     wx.redirectTo({
-      url: '../student/index/index',
+      // url: '../student/index/index',
+      url: '../student/task/list',
     })
   },
   registerTeacher: function (e) {
@@ -136,7 +138,7 @@ Page({
     });
 
     wx.redirectTo({
-      url: '../teacher/index/index',
+      url: '../teacher/task/list',
     })
   },
 })
