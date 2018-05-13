@@ -1,12 +1,12 @@
 <view class="page">
-  <view wx:if="{{!user}}" class="userinfo">
+  <view  wx:if="{{!user}}" class="userinfo">
     <view class="cover">
       <view class="cover_img">
         <image mode="aspectFill" src="{{src}}"></image>
       </view>
-      <view bindtap='enterWXapp' class="cover_btn">
+      <button open-type="getUserInfo" bindgetuserinfo="enterWXapp" class="cover_btn">
         进入程序
-      </view>
+      </button>
     </view>
   </view>
   <view wx:if="{{user&&!isteacher&&!isstudent}}">

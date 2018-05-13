@@ -9,7 +9,7 @@
 (function (root) {
   var _ = require('underscore.js');
   var Bmob = {};
-  Bmob.VERSION = "js0.0.1";
+  Bmob.VERSION = "js3.6.1";
   Bmob._ = _;
 
   var EmptyConstructor = function () { };
@@ -223,7 +223,7 @@
     var dataObject = JSON.parse(data);
 
     var error;
-    wx.showNavigationBarLoading()
+
     if (dataObject.category == "wechatApp") {
 
       const uploadTask = wx.uploadFile({
@@ -235,15 +235,14 @@
         },
         formData: dataObject,
         success: function (res) {
-          console.log(res);
           var data = JSON.parse(res.data);
           promise.resolve(data, res.statusCode, res);
-          wx.hideNavigationBarLoading()
+
         },
         fail: function (e) {
           console.log(e);
           promise.reject(e);
-          wx.hideNavigationBarLoading()
+
         }
       });
 
@@ -270,11 +269,11 @@
           } else {
             promise.resolve(res.data, res.statusCode, res);
           }
-          wx.hideNavigationBarLoading()
+
         },
         fail: function (e) {
           promise.reject(e);
-          wx.hideNavigationBarLoading()
+
         }
       });
     }
@@ -4004,7 +4003,7 @@
 
     var data = _.map(objects,
       function (object) {
-        var json = object._getSaveJSON();
+        // var json = object._getSaveJSON();
         var method = "POST";
 
         var path = "/1/classes/" + object.className;
@@ -4012,7 +4011,7 @@
           path = path + "/" + object.id;
           method = "DELETE";
         }
-        object._startSave();
+        // object._startSave();
         return {
           method: method,
           path: path,
@@ -5136,6 +5135,10 @@
         var promise = new Bmob.Promise();
         Bmob.User.requestOpenId(code, {
           success: function (authData) {//获取授权成功
+            if (authData.errcode) {
+              console.log("登陆失败,原因：", authData, '一般是Bmob后台未设置微信appId')
+              promise.reject(authData);
+            }
             var platform = "weapp";
             var user = Bmob.Object._create("_User");
             user._linkWith(platform, authData).then(function (resp) {
@@ -5154,46 +5157,64 @@
         return promise._thenRunCallbacks({});
 
       },
+      getUserInfo: function (userInfo) {
+        // var userInfo = result.userInfo
+        console.log(userInfo)
+        var nickName = userInfo.nickName
+        var avatarUrl = userInfo.avatarUrl
+        var u = Bmob.Object.extend('_User')
+        var query = new Bmob.Query(u)
+
+        var currentUser = Bmob.User.current()
+        if (!currentUser) {
+          console.log('未获取到用户信息')
+        }
+        var openid = wx.getStorageSync('openid')
+        console.log(openid)
+        query.get(currentUser.id, {
+          success: function (result) {
+            result.set('nickName', nickName)
+            result.set('userPic', avatarUrl)
+            result.set('openid', openid)
+            result.save().then((res) => {
+              // var currentUser = Bmob.User.current()
+              currentUser.set('nickName', nickName)
+              currentUser.set('userPic', avatarUrl)
+              Bmob.User._saveCurrentUser(currentUser)
+            })
+          }
+        })
+
+      },
       auth: function () {
         var that = this;
+        var promise = new Bmob.Promise();
         wx.checkSession({
           success: function () {
             //session 未过期，并且在本生命周期一直有效
+            console.log('登陆中')
           },
           fail: function () {
             wx.login({
               success: function (res) {
+
                 that.loginWithWeapp(res.code).then(
                   function (user) {
+
                     var openid = user.get('authData').weapp.openid
                     wx.setStorageSync('openid', openid)
                     //保存用户其他信息到用户表
-                    wx.getUserInfo({
-                      success: function (result) {
-                        var userInfo = result.userInfo
-                        var nickName = userInfo.nickName
-                        var avatarUrl = userInfo.avatarUrl
-                        var u = Bmob.Object.extend('_User')
-                        var query = new Bmob.Query(u)
-                        query.get(user.id, {
-                          success: function (result) {
-                            result.set('nickName', nickName)
-                            result.set('userPic', avatarUrl)
-                            result.set('openid', openid)
-                            result.save()
-                          }
-                        })
-                      }
-                    })
+                    promise.resolve(user);
                   },
                   function (err) {
-                    console.log(err, 'errr')
+                    promise.reject(err);
                   }
                 )
               }
             })
           }
         })
+        return promise._thenRunCallbacks({});
       },
 
 
@@ -6811,6 +6832,21 @@
     })._thenRunCallbacks(options);
 
   }
+
+
+  /**
+* @namespace 退款函数
+*/
+  Bmob.refund = Bmob.refund || {};
+  Bmob.refund = function (data, options) {
+    var request = Bmob._request("pay/refund", null, null, 'POST', Bmob._encode(data, null, true));
+    return request.then(function (resp) {
+      return Bmob._decode(null, resp);
+    })._thenRunCallbacks(options);
+
+  }
+
+
 
 
   /**
