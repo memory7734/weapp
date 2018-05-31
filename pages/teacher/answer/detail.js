@@ -24,7 +24,7 @@ Page({
         wx.setNavigationBarTitle({
           title: result.get("title"),
         })
-        if (result.get("reviewed")){
+        if (result.get("reviewed")) {
           that.setData({
             reviewed: true,
             score: result.get("score"),
@@ -51,7 +51,12 @@ Page({
           results.save();
           wx.showToast({
             title: '修改成功',
-            icon: 'none'
+            icon: 'none',
+            success: function () {
+              setTimeout(function () {
+                wx.navigateBack({})
+              }, 2000) //延迟时间 
+            }
           })
         }
       })
@@ -65,7 +70,12 @@ Page({
           results.save();
           wx.showToast({
             title: '评价成功',
-            icon: 'none'
+            icon: 'none',
+            success: function () {
+              setTimeout(function () {
+                wx.navigateBack({})
+              }, 2000) //延迟时间 
+            },
           })
         }
       })

@@ -69,14 +69,33 @@ Page({
       url: 'detail?id=' + options.currentTarget.dataset.id,
     })
   },
-  edit: function (options) {
-    wx.navigateTo({
-      url: '../answer/edit?id=' + options.currentTarget.dataset.id,
-    })
-  },
   review: function (options) {
-    wx.navigateTo({
-      url: '../answer/review?id=' + options.currentTarget.dataset.id,
-    })
+    var currentUser = Bmob.User.current();
+    var Answer = Bmob.Object.extend("answer");
+    var answer = new Bmob.Query(Answer);
+    answer.equalTo('taskid', options.currentTarget.dataset.id)
+    answer.equalTo('studentid', currentUser.id)
+    answer.find({
+      success: function (result) {
+        if (result[0].get("reviewed")) {
+          wx.navigateTo({
+            url: 'review?id=' + options.currentTarget.dataset.id,
+          })
+        }else{
+          wx.showToast({
+            title: '老师暂未评阅',
+            icon: 'none',
+            success: function () {
+              setTimeout(function () {
+                wx.navigateBack({})
+              }, 2000) //延迟时间 
+            },
+          })
+        }
+      },
+      error: function (object, error) {
+        // 查询失败
+      }
+    });
   },
 })

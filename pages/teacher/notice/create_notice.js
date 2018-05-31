@@ -66,10 +66,12 @@ Page({
       success: function (result) {
         wx.showToast({
           title: '创建成功',
-          icon: 'success'
-        })
-        wx.navigateBack({
-          
+          icon: 'success',
+          success: function () {
+            setTimeout(function () {
+              wx.navigateBack({})
+            }, 2000) //延迟时间 
+          },
         })
       },
       error: function (result, error) {

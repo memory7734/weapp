@@ -3,5 +3,5 @@
     <view class='score'>{{score}}分</view>
     <view class='comment'>{{comment}}</view>
   </view>
-  <!-- <view wx:else>老师暂未查看回答</view> -->
+   <view class='tip' wx:else>老师暂未评阅</view> 
 </view>

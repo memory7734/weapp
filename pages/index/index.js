@@ -39,12 +39,12 @@ Page({
   enterWXapp: function (e) {
     that = this;
     var currentUser = Bmob.User.current();
-    currentUser.getUserInfo(e.detail.userInfo)
     if (!currentUser) {
       var user = new Bmob.User();//开始注册用户
       user.auth()
       that.setData({ user: true })
       currentUser = Bmob.User.current();
+      currentUser.getUserInfo(e.detail.userInfo)
       if (!currentUser) {
         wx.showToast({
           title: '不授权用户信息将无法正常使用小程序，请退出后删掉本程序，重新加载进来再使用',
@@ -54,6 +54,7 @@ Page({
     } else {
       var User = Bmob.Object.extend("_User");
       var queryUser = new Bmob.Query(User);
+      currentUser.getUserInfo(e.detail.userInfo)
       // 查询所有数据
       queryUser.get(currentUser.id, {
         success: function (result) {

@@ -37,12 +37,13 @@ Page({
                   success: function (result) {
                     wx.showToast({
                       title: '加入成功',
-                      icon: 'none'
+                      icon: 'none',
+                      success: function () {
+                        setTimeout(function () {
+                          wx.navigateBack({})
+                        }, 2000) //延迟时间 
+                      },
                     })
-                    setTimeout(function () {
-                      wx.hideToast()
-                      wx.navigateBack({})
-                    }, 1500)
                   },
                   error: function (result, error) {
                     wx.showToast({

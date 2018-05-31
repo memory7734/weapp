@@ -8,7 +8,7 @@ Page({
   formSubmit: function (options) {
     var Clazz = Bmob.Object.extend("clazz");
     var clazz = new Clazz();
-    var that =this;
+    var that = this;
     clazz.set("name", options.detail.value.class_name);
     clazz.save(null, {
       success: function (result) {
@@ -23,24 +23,20 @@ Page({
             //创建成功
             wx.showToast({
               title: '创建成功',
-              icon: 'success'
-            })
-            that.setData({
-              classid: id
-            })
-            wx.setClipboardData({
-              data: id,
+              icon: 'success',
               success: function () {
-                wx.showToast({
-                  title: '已复制到剪贴板，可直接进入群聊分享',
-                  icon: 'none'
-                })
-              }
+                setTimeout(function () {
+                  wx.setClipboardData({
+                    data: id,
+                    success: function () {
+                      that.setData({
+                        classid: id
+                      })
+                    }
+                  })
+                }, 2000) //延迟时间 
+              },
             })
-            // setTimeout(function () {
-            //   wx.hideToast()
-            //   wx.navigateBack({})
-            // }, 1500)
           },
           error: function (result, error) {
             console.log("关联班级失败")

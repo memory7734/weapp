@@ -21,7 +21,12 @@ Page({
       error: function (object, error) {
         wx.showToast({
           title: '公告不存在',
-          icon: 'none'
+          icon: 'none',
+          success: function () {
+            setTimeout(function () {
+              wx.navigateBack({})
+            }, 2000) //延迟时间 
+          },
         })
       }
     });

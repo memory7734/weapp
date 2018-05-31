@@ -122,14 +122,16 @@ Page({
 
 
   },
-  catch_data: function (options) {
-    console.log(options)
-    that.setData({
-      changed_index: options.currentTarget.dataset.index,
-      changed_id: options.currentTarget.dataset.id,
-      changed_name: that.data.list[options.currentTarget.dataset.index]['name']
+  copyID: function (options){
+    wx.setClipboardData({
+      data: options.currentTarget.dataset.id,
+      success: function () {
+        wx.showToast({
+          title: '已复制到剪贴板，可直接进入群聊分享',
+          icon: 'success'
+        })
+      }
     })
-    console.log(that.data)
   },
   inputChange: function (event) {
     that.setData({
@@ -140,8 +142,10 @@ Page({
   /**
  * 弹窗
  */
-  change_name: function () {
+  change_name: function (options) {
     this.setData({
+      changed_index: options.currentTarget.dataset.index,
+      changed_id: options.currentTarget.dataset.id,
       showModal: true
     })
   },

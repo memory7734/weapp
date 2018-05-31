@@ -56,9 +56,13 @@ Page({
                 })
                 wx.showToast({
                   title: '已退出',
-                })
-                wx.redirectTo({
-                  url: '../../index/index',
+                  success: function () {
+                    setTimeout(function () {
+                      wx.redirectTo({
+                        url: '../../index/index',
+                      })
+                    }, 2000) //延迟时间 
+                  },
                 })
 
               } else if (res.cancel) {

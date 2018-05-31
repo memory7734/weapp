@@ -33,3 +33,22 @@
   display: flex;
   margin-bottom: 30rpx;
 }
+.tip {
+  display: flex;
+  flex-direction: column;
+  padding: 200rpx 0rpx 10rpx 0rpx;
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  font-size: 30rpx;
+  background: #fff;
+  height: 80rpx;
+  margin: 10rpx 30rpx 0 30rpx;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+}

@@ -9,6 +9,7 @@ Page({
   },
   onLoad: function (options) {
     that = this;
+    console.log(options.id)
     var currentUser = Bmob.User.current();
     var Answer = Bmob.Object.extend("answer");
     var answer = new Bmob.Query(Answer);

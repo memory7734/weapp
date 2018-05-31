@@ -26,44 +26,27 @@
   flex-direction: row;
 }
 
-.middle {
-  margin-left: 80rpx;
-  display: flex;
-  flex-direction: row;
-  width: 60%;
-}
-
 .name {
   font-size: 30rpx;
   height: 100rpx;
   margin-top: 45rpx;
+  margin-left: 30rpx;
+  width: 30%;
 }
 
-.change_name {
+.btn {
   font-size: 30rpx;
   background-color: #1bd0bd;
-  width: 180rpx;
+  width: 160rpx;
   height: 70rpx;
   border-radius: 100rpx;
   color: #fff;
-  margin: 38rpx 10rpx auto auto;
+  margin: 30rpx 5rpx auto 20rpx;
+  padding-top: 10rpx;
   text-align: center;
   justify-content: center;
 }
 
-.dismiss {
-  font-size: 30rpx;
-  background-color: #1bd0bd;
-  width: 180rpx;
-  height: 70rpx;
-  border-radius: 100rpx;
-  color: #fff;
-  margin: 130rpx auto;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-}
 
 .modal-mask {
   width: 100%;

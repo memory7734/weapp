@@ -145,7 +145,12 @@ Page({
         result.save();
         wx.showToast({
           title: '修改作业成功',
-          icon: 'none'
+          icon: 'none',
+          success: function () {
+            setTimeout(function () {
+              wx.navigateBack({})
+            }, 2000) //延迟时间 
+          },
         })
       },
       error: function (object, error) {

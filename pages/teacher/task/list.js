@@ -38,7 +38,6 @@ Page({
             that.setData({
               list: list
             })
-            console.log(that.data.list)
           },
           error: function (error) {
             console.log("查询失败: " + error.code + " " + error.message);

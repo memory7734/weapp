@@ -6,8 +6,7 @@
       <view class='title' wx:key="*this">{{item.title}}</view>
       <view class='name' wx:key="*this">{{item.name}}</view>
     </view>
-    <button class='detail' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='detail' size='mini'>查看详情</button>
-    <button class='detail' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='edit' size='mini'>编辑回答</button>
+    <button class='detail' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='detail' size='mini'>编辑回答</button>
     <button class='detail' data-id="{{item['taskid']}}" data-index="{{index}}" bindtap='review' size='mini'>查看评分</button>
   </view>
 </view>

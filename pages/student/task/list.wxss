@@ -26,9 +26,9 @@
 }
 
 .middle {
-  margin-left: 80rpx;
+  margin-left: 70rpx;
   float: left;
-  width: 50%;
+  width: 35%;
 }
 
 .title {
@@ -41,22 +41,16 @@
   color: #7a7a7a;
 }
 
-.right {
-  align-items: center;
-  float: right;
-  width: 30%;
-}
 
 .detail {
   font-size: 30rpx;
   background-color: #1bd0bd;
-  width: 130rpx;
-  height: 100rpx;
-  border-radius: 30rpx;
+  width: 180rpx;
+  height: 70rpx;
+  border-radius: 100rpx;
   color: #fff;
-  margin: 20rpx 10rpx 20rpx 10rpx;
+  margin: 30rpx 5rpx auto 20rpx;
+  padding-top: 10rpx;
   text-align: center;
   justify-content: center;
-  display: flex;
-  align-items: center;
 }

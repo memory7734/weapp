@@ -121,7 +121,14 @@ Page({
       success: function (result) {
         wx.showToast({
           title: '创建作业成功',
-          icon: 'none'
+          icon: 'none',
+          success: function () {
+            setTimeout(function () {
+              wx.reLaunch({
+                url: 'list',
+              })
+            }, 2000) //延迟时间 
+          },
         })
       },
       error: function (result, error) {
@@ -131,8 +138,5 @@ Page({
         })
       }
     });
-    wx.redirectTo({
-      url: 'list',
-    })
   }
 });
