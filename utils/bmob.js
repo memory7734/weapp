@@ -264,16 +264,13 @@
           if (res.data && res.data.code) {
             promise.reject(res);
           } else if (res.statusCode != 200) {
-
             promise.reject(res);
           } else {
             promise.resolve(res.data, res.statusCode, res);
           }
-
         },
         fail: function (e) {
           promise.reject(e);
-
         }
       });
     }

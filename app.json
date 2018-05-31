@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/teacher/index/index",
     "pages/teacher/class/create_class",
     "pages/teacher/class/class_list",
     "pages/teacher/class/join_class",
@@ -14,7 +13,6 @@
     "pages/teacher/task/detail",
     "pages/teacher/task/list",
     "pages/teacher/answer/list",
-    "pages/student/index/index",
     "pages/student/class/class_list",
     "pages/student/class/join_class",
     "pages/student/notice/notice_list",
@@ -24,8 +22,6 @@
     "pages/student/task/review",
     "pages/teacher/answer/detail",
     "pages/logs/logs",
-    "pages/teacher/signin/create",
-    "pages/teacher/signin/list",
     "pages/student/me/me",
     "pages/teacher/me/me",
     "pages/teacher/notice/index"
